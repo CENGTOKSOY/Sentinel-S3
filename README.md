@@ -1,4 +1,3 @@
-cat <<EOF > README.md
 # Sentinel-S3: Cloud-Native Media Analysis Pipeline
 
 A local AWS-simulated media processing pipeline built with **Microservices architecture**. This project demonstrates how to handle asynchronous media processing using **S3** for storage and **DynamoDB** for metadata persistence, all running locally via **LocalStack**.
