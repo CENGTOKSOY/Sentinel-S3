@@ -1,0 +1,39 @@
+# --- Terraform ---
+# Terraform'un indirdiği devasa provider ve plugin dosyaları (822MB'lık hatanın sebebi)
+.terraform/
+# Yerel altyapı durum kayıtları (Hassas veri içerebilir)
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.lock.hcl
+
+# --- Docker & LocalStack ---
+# LocalStack'in oluşturduğu yerel veriler ve kilit dosyaları
+volume/
+.docker/
+# Docker Compose tarafından oluşturulan geçici dosyalar
+.env
+
+# --- Python & Sanal Ortamlar ---
+# Python derleme dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+# Sanal ortam klasörleri (venv)
+venv/
+.venv/
+env/
+# Proje içindeki alt klasörlerdeki venv'ler
+services/api/venv/
+services/processor/venv/
+
+# --- IDE & Sistem ---
+# macOS sistem dosyaları
+.DS_Store
+# PyCharm ve VS Code ayar klasörleri
+.idea/
+.vscode/
+
+# --- Proje Özel ---
+# Log dosyaları
+*.log

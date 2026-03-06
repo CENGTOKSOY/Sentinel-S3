@@ -1,0 +1,22 @@
+services:
+  localstack:
+    container_name: sentinel-s3-localstack
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,dynamodb
+    volumes:
+      - "./volume:/var/lib/localstack"
+
+  api-service:
+    build: ./services/api
+    ports:
+      - "8001:8000"
+    depends_on:
+      - localstack
+
+  processor-service:
+    build: ./services/processor
+    depends_on:
+      - localstack
